@@ -1,0 +1,22 @@
+Package: RFsel
+Title: Some Wrapper Functions for RSelenium with Docker
+Version: 1.0
+Authors@R: 
+    person(given = "Matthias",
+           family = "Uckert",
+           role = c("aut", "cre"),
+           email = "Matthias.Uckert@Outlook.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Some Wrapper Functions for RSelenium with Docker.
+License: No Clue :-D
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Imports: 
+    magrittr,
+    stringi,
+    purrr,
+    janitor,
+    dplyr,
+    glue,
+    RSelenium
