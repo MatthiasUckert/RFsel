@@ -70,3 +70,15 @@ pia_get_vpn_ip <- function(piactl = NULL) {
   i_piactl <- ifelse(is.null(piactl), c_piactl, piactl)
   system(command = paste(i_piactl, 'get vpnip'), intern = TRUE)
 }
+
+#' Check if PIA is running
+#'
+#' @return Logical
+#' @export
+pia_check_if_running <- function() {
+  any(stringi::stri_detect(sort(system(
+    "tasklist", intern = TRUE
+  )), fixed = "pia-client.exe"))
+  
+}
+
