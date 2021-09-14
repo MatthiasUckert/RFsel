@@ -65,9 +65,9 @@ sel_get_driver <- function(port_sel, ecaps = list()) {
   ecaps_ <- NULL
   
   if (length(ecaps) == 0) {
-    ecaps_ <- RFsel::firefox_ecaps_direct_download
+    ecaps_ <- RSelenium::makeFirefoxProfile(RFsel::firefox_ecaps_direct_download)
   } else {
-    ecaps_ <- ecaps
+    ecaps_ <- RSelenium::makeFirefoxProfile(ecaps)
   }
   
   RSelenium::remoteDriver(
