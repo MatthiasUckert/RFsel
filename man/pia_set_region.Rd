@@ -12,7 +12,7 @@ pia_set_region(piactl = NULL, region)
 \item{region}{A Region (see pia_get_regions())}
 }
 \value{
--
+Nothing, changes the PIA region
 }
 \description{
 PIA set Region

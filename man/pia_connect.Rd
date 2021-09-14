@@ -10,7 +10,7 @@ pia_connect(piactl = NULL)
 \item{piactl}{default: C:/Program Files/Private Internet Access/piactl.exe}
 }
 \value{
-
+Nothing, connects PIA
 }
 \description{
 PIA connect

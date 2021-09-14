@@ -4,14 +4,12 @@
 \alias{sel_get_driver}
 \title{Make Selenium Driver}
 \usage{
-sel_get_driver(port_sel, ecaps = "none")
+sel_get_driver(port_sel, ecaps = list())
 }
 \arguments{
 \item{port_sel}{Selenium Port (see sel_docker_start())}
 
-\item{ecaps}{ExtraCapabilities:\cr
-- none\cr
-- ff_direct_download}
+\item{ecaps}{A list of Extra-Capabilites (Default for Firefox Direct DOwnload)}
 }
 \value{
 An object of class remote driver

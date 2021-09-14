@@ -5,15 +5,14 @@
 #' @param port_sel Selenium Port (default: 4445)
 #' @param port_vcn VCN Port (default: 5901)
 #' @param dir_map Mapping Directory
+#' @param version Browser Version
 #'
 #' @return A List
 #' @export
-sel_docker_start <- function(type     = c("debug", "static"),
-                             browser  = c("firefox", "chrome"),
-                             version  = "latest",
-                             port_sel = 4445,
-                             port_vcn = 5901,
-                             dir_map  = NULL) {
+sel_docker_start <- function(
+  type = c("debug", "static"), browser  = c("firefox", "chrome"),
+  version  = "latest", port_sel = 4445, port_vcn = 5901, dir_map  = NULL
+  ) {
   
   
   # Check if Ports are allocated ------------------------------------------------------
@@ -58,26 +57,24 @@ sel_docker_start <- function(type     = c("debug", "static"),
 #' Make Selenium Driver
 #'
 #' @param port_sel Selenium Port (see sel_docker_start())
-#' @param ecaps 
-#' ExtraCapabilities:\cr
-#' - none\cr
-#' - ff_direct_download
+#' @param ecaps A list of Extra-Capabilites (Default for Firefox Direct DOwnload) 
 #'
 #' @return An object of class remote driver
 #' @export
-sel_get_driver <- function(port_sel, ecaps = "none") {
-  rd <- RSelenium::remoteDriver
-  e_caps <- dplyr::case_when(
-    ecaps == "ff_direct_download" ~ RSelenium::makeFirefoxProfile(lst_ff_direct_download)
-  )
+sel_get_driver <- function(port_sel, ecaps = list()) {
+  ecaps_ <- NULL
   
-  if (is.null(ecaps)) {
-    rsc <- rd(remoteServerAddr = "localhost", port = port_sel)
+  if (length(ecaps) == 0) {
+    ecaps_ <- RFsel::firefox_ecaps_direct_download
   } else {
-    rsc <- rd(remoteServerAddr = "localhost", port = port_sel, 
-              extraCapabilities = e_caps)
+    ecaps_ <- ecaps
   }
-  return(rsc)
+  
+  RSelenium::remoteDriver(
+    remoteServerAddr = "localhost", 
+    port = port_sel, 
+    extraCapabilities = ecaps_
+  )
 }
 
 

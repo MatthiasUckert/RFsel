@@ -10,7 +10,7 @@ pia_get_vpn_ip(piactl = NULL)
 \item{piactl}{default: C:/Program Files/Private Internet Access/piactl.exe}
 }
 \value{
-
+A caracter, PIA IP Address
 }
 \description{
 PIA get VPN IP

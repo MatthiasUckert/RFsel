@@ -10,7 +10,7 @@ pia_get_connection_state(piactl = NULL)
 \item{piactl}{default: C:/Program Files/Private Internet Access/piactl.exe}
 }
 \value{
-
+A character of the PIA connection State
 }
 \description{
 PIA get Connection State

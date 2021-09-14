@@ -10,7 +10,7 @@ pia_disconnect(piactl = NULL)
 \item{piactl}{default: C:/Program Files/Private Internet Access/piactl.exe}
 }
 \value{
-
+Nothing, disonnects PIA
 }
 \description{
 PIA disconnect

@@ -15,7 +15,7 @@ pia_get_regions <- function(piactl = NULL) {
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #' @param region A Region (see pia_get_regions())
 #'
-#' @return - 
+#' @return Nothing, changes the PIA region
 #' @export
 pia_set_region <- function(piactl = NULL, region) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'
@@ -27,7 +27,7 @@ pia_set_region <- function(piactl = NULL, region) {
 #'
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #'
-#' @return 
+#' @return Nothing, connects PIA
 #' @export
 pia_connect <- function(piactl = NULL) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'
@@ -39,7 +39,7 @@ pia_connect <- function(piactl = NULL) {
 #'
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #'
-#' @return 
+#' @return Nothing, disonnects PIA
 #' @export
 pia_disconnect <- function(piactl = NULL) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'
@@ -51,7 +51,7 @@ pia_disconnect <- function(piactl = NULL) {
 #'
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #'
-#' @return 
+#' @return A character of the PIA connection State
 #' @export
 pia_get_connection_state <- function(piactl = NULL) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'
@@ -63,7 +63,7 @@ pia_get_connection_state <- function(piactl = NULL) {
 #'
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #'
-#' @return 
+#' @return A caracter, PIA IP Address
 #' @export
 pia_get_vpn_ip <- function(piactl = NULL) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'

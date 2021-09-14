@@ -18,6 +18,8 @@ sel_docker_start(
 
 \item{browser}{Firefox/Chrome}
 
+\item{version}{Browser Version}
+
 \item{port_sel}{Selenium Port (default: 4445)}
 
 \item{port_vcn}{VCN Port (default: 5901)}
