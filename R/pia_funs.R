@@ -14,14 +14,23 @@ pia_get_regions <- function(piactl = NULL) {
 #'
 #' @param piactl default: C:/Program Files/Private Internet Access/piactl.exe
 #' @param region A Region (see pia_get_regions())
+#' @param .wait If TRUE, wait until PIA has connection status "Connected"
 #'
 #' @return Nothing, changes the PIA region
 #' @export
-pia_set_region <- function(piactl = NULL, region) {
+pia_set_region <- function(piactl = NULL, region, .wait = TRUE) {
   c_piactl <- '"C:/Program Files/Private Internet Access/piactl.exe"'
   i_piactl <- ifelse(is.null(piactl), c_piactl, piactl)
   invisible(system(command = paste(i_piactl, 'set region', region), intern = TRUE))
+  
+  if (.wait) {
+    while (!pia_get_connection_state() == "Connected") {
+      Sys.sleep(1)
+    }
+  }
+  
 }
+
 
 #' PIA connect
 #'

@@ -4,12 +4,14 @@
 \alias{pia_set_region}
 \title{PIA set Region}
 \usage{
-pia_set_region(piactl = NULL, region)
+pia_set_region(piactl = NULL, region, .wait = TRUE)
 }
 \arguments{
 \item{piactl}{default: C:/Program Files/Private Internet Access/piactl.exe}
 
 \item{region}{A Region (see pia_get_regions())}
+
+\item{.wait}{If TRUE, wait until PIA has connection status "Connected"}
 }
 \value{
 Nothing, changes the PIA region
