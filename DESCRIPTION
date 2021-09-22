@@ -19,6 +19,10 @@ Imports:
     janitor,
     dplyr,
     glue,
-    RSelenium
+    RSelenium,
+    rlang,
+    digest,
+    tibble,
+    tidyr
 Depends: 
     R (>= 2.10)
