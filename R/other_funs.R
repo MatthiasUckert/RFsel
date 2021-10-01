@@ -75,16 +75,17 @@ download_js <- function(.rsc, .url, .js, .dir_map, .dir_doc, .wait = 10) {
   hash_ <- digest::digest(paste0(.url, .js))
   
   check_ <- try(invisible(file.remove(lfc(.dir_map))), TRUE)
+  
   i <- 0
   while (inherits(check_, "try-error")) {
+    Sys.sleep(2)
     check_ <- try(invisible(file.remove(lfc(.dir_map))), TRUE)
-    Sys.sleep(1)
     i <- i + 1
     if (i == .wait) break
   }
   
   if (length(lfc(.dir_map)) != 0) {
-    stop("Mapped Directory is NOT EMPTY")
+    stop("Mapped Directory is NOT EMPTY", call. = FALSE)
   }
   
   
